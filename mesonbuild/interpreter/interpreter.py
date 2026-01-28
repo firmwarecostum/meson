@@ -887,8 +887,6 @@ class Interpreter(InterpreterBase, HoldableObject):
             default_options = [default_options]
         if isinstance(default_options, list):
             default_options = dict((x.split('=', 1) for x in default_options))
-        if extra_default_options:
-            default_options = {**extra_default_options, **default_options}
 
         # This in practice is only used for default_library.  forced_options is the
         # only case in which a meson.build file overrides the machine file or the
